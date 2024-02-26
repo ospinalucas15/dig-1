@@ -96,7 +96,7 @@ cload 8 10 500f
 +PKETA   = -2.188083E-3    )
 *
 
-.tran 3ps 80.1ns
+.tran 3ps 160.1ns
 
  .control
         run
@@ -104,11 +104,12 @@ cload 8 10 500f
         meas tran iave INTEG i(vsupply) from=0ns to=80.1ns
         let power = -iave * 1.5 / 80.1ns  
   *how to access psu from here?
-        print power
-	plot V(2) 
-      plot V(3)
-        plot v(8)
-        plot i(vsupply)
+      print power
+      set color0 = white, color1 = black, color2 = red, color3 = orange, color4 = blue, color5 = purple, color6 = green
+      set xbrushwidth = 3
+	plot V(2) V(3)
+      plot v(8)
+      plot i(vsupply)
  .endc
 	
 

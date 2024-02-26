@@ -1,17 +1,17 @@
 *or
-M1 4 2 1 1 P1 L=180nm W=20um
-M2 4 3 1 1 P1 L=180nm W=20um
+M1 7 2 1 1 P1 L=180nm W=20um
+M2 4 3 7 7 P1 L=180nm W=20um
 M3 6 4 1 1 P1 L=180nm W=20um
-M4 4 3 5 5 N1 L=180nm W=10um
-M5 5 2 0 0 N1 L=180nm W=10um
-M6 6 4 7 7 N1 L=180nm W=10um
+M4 4 3 0 0 N1 L=180nm W=10um
+M5 4 2 0 0 N1 L=180nm W=10um
+M6 6 4 5 5 N1 L=180nm W=10um
 
 
 vsupply 1 0 1.5V
-VSS 7 0 0V
-VA 2 0 pulse(0 1.5 20ns 50ps 50ps 20ns 40.1ns)
-VB 3 0 pulse(0 1.5 40.05ns 50ps 50ps 40.05ns 80.1ns)
-cload 6 7 500f
+VSS 5 0 0V
+VA 3 0 pulse(0 1.5 20ns 50ps 50ps 20ns 40.1ns)
+VB 2 0 pulse(0 1.5 40.05ns 50ps 50ps 40.05ns 80.1ns)
+cload 6 5 500f
 
 .MODEL N1 NMOS (                                LEVEL   = 49
 +VERSION = 3.1            TNOM    = 27             TOX     = 4.5E-9
@@ -92,7 +92,7 @@ cload 6 7 500f
 
  .control
         run
-        write and.raw
+        write or.raw
         meas tran iave INTEG i(vsupply) from=0ns to=80.1ns
         let power = -iave * 1.5 / 80.1ns  
   *how to access psu from here?

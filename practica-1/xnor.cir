@@ -96,7 +96,7 @@ cload 10 11 500f
 +PKETA   = -2.188083E-3    )
 *
 
-.tran 3ps 80.1ns
+.tran 3ps 160.1ns
 
  .control
         run

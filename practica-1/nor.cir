@@ -94,7 +94,8 @@ cload 1 6 500f
         let power = -iave * 1.5 / 80.1ns  
   *how to access psu from here?
         print power
-	plot V(2) V(4)
+	plot V(2) 
+      plot V(4)
         plot v(1)
         plot i(vsupply)
  .endc

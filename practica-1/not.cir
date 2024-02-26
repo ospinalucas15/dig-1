@@ -23,6 +23,7 @@ vdc0 vss1 6 dc 0V
         let power = -iave * 1.5 / 20.1ns ; how to access psu from here?
         print power
 	plot V(2) V(1)
+        plot i(vsupply)
  .endc
 
 * Measure Area Under the Curve of i(vdc0)
